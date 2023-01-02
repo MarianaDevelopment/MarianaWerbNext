@@ -3,6 +3,7 @@ import Navbar from "@/components/general/Navbar";
 import Footer from "@/components/general/Footer";
 import { useRouter } from "next/router";
 import UserContext from "@/components/context/userContext";
+import ModuleContent from "@/components/content/ModuleContent";
 
 const Dashboard = () => {
   const { user } = useContext(UserContext);
@@ -45,9 +46,7 @@ const Dashboard = () => {
 
       <div className={`bg-primary ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>
-          <h1 className={styles.heading2}>Guild ID: {guildId}</h1>
-          <p> this site is under construction </p>
-          
+          <ModuleContent guildId={guildId} />
         </div>
       </div>
 

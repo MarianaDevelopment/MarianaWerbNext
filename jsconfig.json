@@ -22,7 +22,7 @@
           "@/public/*": ["./public/*"],
           "@/assets/*": ["./src/assets/*"],
           "@/request/*": ["./src/request/*"],
-         // "@/contexts/*": ["./src/contexts/*"],
+          "@/partial/*": ["./src/partial/*"],
       }
     },
     "include": ["next-env.d.ts", 

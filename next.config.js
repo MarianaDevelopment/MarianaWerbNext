@@ -12,7 +12,7 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/:slug*',
+        source: '/:slug',
         destination: '/',
       },
     ]
