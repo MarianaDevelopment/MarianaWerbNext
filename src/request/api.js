@@ -4,7 +4,7 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 const api = axios.create({
-  baseURL: "https://api.mariana-re.com/api/",
+  baseURL: "http://localhost:3001/api/",
   headers: {
     "Content-Type": "application/json",
     Accept: "application/json",

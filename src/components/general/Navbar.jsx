@@ -5,10 +5,10 @@ import Image from "next/image";
 import Router from "next/router";
 import UserContext from "@/components/context/userContext";
 const Navbar = () => {
-  const { user, setUser, hide, setHide, handleLogout } = useContext(UserContext);
+  const { user, setUser, hide, setHide, handleLogout } =
+    useContext(UserContext);
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
- 
 
   return (
     <nav className="w-full flex py-6 justify-between items-center navbar">
@@ -71,7 +71,7 @@ const Navbar = () => {
               hide ? "hidden" : ""
             }`}
             onClick={() => {
-              window.location.href = "https://api.mariana-re.com/api/login";
+              window.location.href = "http://localhost:3001/api/login";
             }}
           >
             Login
@@ -122,10 +122,7 @@ const Navbar = () => {
                     }}
                   />
                 </button>
-                <button
-                  className={`px-5 py-2 `}
-                  onClick={handleLogout}
-                >
+                <button className={`px-5 py-2 `} onClick={handleLogout}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     class="icon icon-tabler icon-tabler-logout"

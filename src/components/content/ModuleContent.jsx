@@ -1,8 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import {
-  getGuildsUser,
-  getChannelsByGuild,
-} from "@/request/guildsRequest";
+import { getGuildsUser, getChannelsByGuild } from "@/request/guildsRequest";
 import { useRouter } from "next/router";
 import UserContext from "@/components/context/userContext";
 import Image from "next/image";
@@ -13,7 +10,7 @@ const ModuleContent = ({ guildId }) => {
   const [guildData, setGuildData] = useState(null);
   const [channels, setChannels] = useState(null);
   const [checked, setChecked] = useState(false);
-  const [modalOption, setModalOption ] = useState(false); 
+  const [modalOption, setModalOption] = useState(false);
 
   const Router = useRouter();
 
@@ -32,19 +29,17 @@ const ModuleContent = ({ guildId }) => {
     }
   }, [user, guildId]);
 
-    useEffect(() => {
+  useEffect(() => {
     if (guildData) {
-        const channelsGuild = async () => {
-            const channels = await getChannelsByGuild(guildId, user.userId);
-            if (channels.status === 200) {
-                setChannels(channels.data);
-            }
-        };
-        channelsGuild();
+      const channelsGuild = async () => {
+        const channels = await getChannelsByGuild(guildId, user.userId);
+        if (channels.status === 200) {
+          setChannels(channels.data);
+        }
+      };
+      channelsGuild();
     }
-    }, [guildData, guildId, user]);
-
-
+  }, [guildData, guildId, user]);
 
   return (
     <div>
@@ -104,7 +99,7 @@ const ModuleContent = ({ guildId }) => {
             </div>
             <button
               className="bg-[#7289DA] text-white font-bold py-2 px-7 rounded-full hover:bg-[#5E6CA8] my-4 md:my-0 ml-4"
-              
+              onClick={() => setModalOption(true)}
             >
               Configure
             </button>
