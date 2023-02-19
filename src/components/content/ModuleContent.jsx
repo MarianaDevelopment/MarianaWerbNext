@@ -69,7 +69,7 @@ const ModuleContent = ({ guildId }) => {
       </div>
       <div className="flex flex-col justify-center items-center mt-10">
         {/*Un marco con un boton para cada modulo, el primero es Welcome*/}
-        <div className="flex flex-col md:flex-row justify-between items-center w-[60%] h-[80%] bg-[#2C2F33] rounded-2xl p-4   md:w-[80%] h-[120px] bg-[#2C2F33] rounded-2xl p-4">
+        <div className="flex flex-col md:flex-row justify-between items-center w-[400px] h-[200px] bg-[#2C2F33] rounded-2xl p-4   bg-[#2C2F33] rounded-2xl p-4">
           <div className="">
             <h1 className="text-[18px] font-bold text-white md:text-[28px]">
               Welcome Module
@@ -77,26 +77,6 @@ const ModuleContent = ({ guildId }) => {
           </div>
           {/*toggle button checked or not*/}
           <div className="flex flex-col justify-center items-center md:flex-row">
-            <div className="flex flex-row justify-center items-center">
-              <input
-                type="checkbox"
-                className={`form-check-input appearance-none w-9 -ml-10 rounded-full float-left h-5 align-top bg-white bg-no-repeat bg-contain bg-gray-300 focus:outline-none cursor-pointer shadow-sm ${
-                  checked ? "border-[#7289DA]" : "border-gray-300"
-                }`}
-                role="switch"
-                id="flexSwitchCheckDefault"
-                checked={checked}
-                onChange={() => setChecked(!checked)}
-              />
-              <label
-                className={`form-check-label text-white text-sm font-bold ml-2 ${
-                  checked ? "text-[#7289DA]" : "text-gray-300"
-                }`}
-                htmlFor="flexSwitchCheckDefault"
-              >
-                {checked ? "Enabled" : "Disabled"}
-              </label>
-            </div>
             <button
               className="bg-[#7289DA] text-white font-bold py-2 px-7 rounded-full hover:bg-[#5E6CA8] my-4 md:my-0 ml-4"
               onClick={() => setModalOption(true)}
