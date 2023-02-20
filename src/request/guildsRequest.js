@@ -26,3 +26,12 @@ export const getChannelsByGuild = async (guildId, userId) => {
     return;
   }
 };
+
+export const configWelcome = async (data) => {
+  try {
+    const response = await api.post(`/updatewelcome`, data);
+    return response;
+  } catch (error) {
+    return;
+  }
+};

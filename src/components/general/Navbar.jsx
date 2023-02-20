@@ -71,7 +71,7 @@ const Navbar = () => {
               hide ? "hidden" : ""
             }`}
             onClick={() => {
-              window.location.href = "http://localhost:3001/api/login";
+              window.location.href = "https://api.mariana-re.com/api/login";
             }}
           >
             Login

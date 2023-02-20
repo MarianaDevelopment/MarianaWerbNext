@@ -34,7 +34,10 @@ const ModuleContent = ({ guildId }) => {
       const channelsGuild = async () => {
         const channels = await getChannelsByGuild(guildId, user.userId);
         if (channels.status === 200) {
-          setChannels(channels.data);
+          const channelsFiltered = channels.data.filter(
+            (channel) => channel.type === 0
+          );
+          setChannels(channelsFiltered);
         }
       };
       channelsGuild();
@@ -69,16 +72,20 @@ const ModuleContent = ({ guildId }) => {
       </div>
       <div className="flex flex-col justify-center items-center mt-10">
         {/*Un marco con un boton para cada modulo, el primero es Welcome*/}
-        <div className="flex flex-col md:flex-row justify-between items-center w-[400px] h-[200px] bg-[#2C2F33] rounded-2xl p-4   bg-[#2C2F33] rounded-2xl p-4">
+        <div className="flex flex-col md:flex-row justify-between items-center bg-[#00040F] p-4 md:p-10 w-full md:w-[60%] border-2 border-[#7289DA] p-4 ">
           <div className="">
             <h1 className="text-[18px] font-bold text-white md:text-[28px]">
               Welcome Module
             </h1>
+            <p className="text-[14px] font-bold text-gray-400 md:text-[18px]">
+              This module will send a welcome message to the new members of your
+              server.
+            </p>
           </div>
           {/*toggle button checked or not*/}
           <div className="flex flex-col justify-center items-center md:flex-row">
             <button
-              className="bg-[#7289DA] text-white font-bold py-2 px-7 rounded-full hover:bg-[#5E6CA8] my-4 md:my-0 ml-4"
+              className="bg-[#00040F] border-2 border-[#7289DA] text-[#7289DA] font-bold py-2 px-7  mt-4 md:mt-0 md:mr-4 rounded-2xl"
               onClick={() => setModalOption(true)}
             >
               Configure
