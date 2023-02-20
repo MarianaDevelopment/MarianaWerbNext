@@ -84,7 +84,7 @@ export default function TeamCreate({
               onChange={(e) => setRoleId(e.target.value)}
             >
               <option value="">Select Role</option>
-              {roles.map((role, index) => (
+              {roles?.map((role, index) => (
                 <option key={index} value={role.id}>
                   {role.name}
                 </option>
@@ -100,7 +100,7 @@ export default function TeamCreate({
               onChange={(e) => setRoleId2(e.target.value)}
             >
               <option value="">Select Role</option>
-              {roles.map((role, index) => (
+              {roles?.map((role, index) => (
                 <option key={index} value={role.id}>
                   {role.name}
                 </option>
@@ -116,7 +116,7 @@ export default function TeamCreate({
               onChange={(e) => setRoleId3(e.target.value)}
             >
               <option value="">Select Role</option>
-              {roles.map((role, index) => (
+              {roles?.map((role, index) => (
                 <option key={index} value={role.id}>
                   {role.name}
                 </option>
