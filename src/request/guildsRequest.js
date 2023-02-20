@@ -32,6 +32,42 @@ export const configWelcome = async (data) => {
     const response = await api.post(`/updatewelcome`, data);
     return response;
   } catch (error) {
-    return;
+    return error;
+  }
+};
+
+export const configTicket = async (data) => {
+  try {
+    const response = await api.post(`/createpanel`, data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const createTeam = async (data) => {
+  try {
+    const response = await api.post(`/createteam`, data);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const showConfigWelcome = async (guildId) => {
+  try {
+    const response = await api.get(`/showconfig/${guildId}`);
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
+export const getRoles = async (guildId, userId) => {
+  try {
+    const response = await api.get(`/guilds/${guildId}/${userId}/roles`);
+    return response;
+  } catch (error) {
+    return error;
   }
 };

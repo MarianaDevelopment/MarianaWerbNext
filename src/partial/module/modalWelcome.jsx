@@ -49,6 +49,10 @@ export default function ModalWelcome({
       }, 2000);
     } else {
       setError(true);
+      setMessage("Ups, something went wrong");
+      setTimeout(() => {
+        setError(false);
+      }, 2000);
     }
   };
 

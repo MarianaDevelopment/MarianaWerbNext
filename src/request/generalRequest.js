@@ -1,4 +1,4 @@
-import api from './api';
+import api from "./api";
 
 export const getAllCommands = async () => {
   try {
@@ -6,6 +6,5 @@ export const getAllCommands = async () => {
     return response;
   } catch (error) {
     return;
-
   }
 };
